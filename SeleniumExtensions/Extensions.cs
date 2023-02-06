@@ -234,7 +234,7 @@ namespace SeleniumExtensions
         /// Clicks on an element in the active frame
         /// </summary>
         /// <param name="element">Element to click</param>
-        public static void ClickElement(this IWebDriver driver, IWebElement element, int elementIndex = 0)
+        public static void ClickElement(this IWebDriver driver, IWebElement element)
         {
             ClickElement(driver, element, DefaultClickType, DefaultScrollBehaviour);
         }
