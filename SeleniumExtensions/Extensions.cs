@@ -122,6 +122,13 @@ namespace SeleniumExtensions
             var element = driver.FindElements(by)[elementIndex];
             ScrollToElement(driver, element, scrollBehaviour);
         }
+
+        // TOOD: Add documentation
+        public static void ScrollToElement(this IWebDriver driver, By by, int elementIndex = 0)
+        {
+            var element = driver.FindElements(by)[elementIndex];
+            ScrollToElement(driver, element, DefaultScrollBehaviour);
+        }
         #endregion
         #endregion
         #region SimulateJavaScriptEvent
