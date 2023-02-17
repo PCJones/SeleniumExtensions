@@ -139,7 +139,7 @@ namespace SeleniumExtensions
         /// <param name="eventName">Event to simulate (e.g. click, dbclick, mouse(over), mouse(down))</param>
         public static void SimulateJavaScriptEvent(this IWebDriver driver, IWebElement element, string eventName)
         {
-            var script = $"{Constants.JavaScriptEventSimulationCode} simulate(arguments[0], '{eventName}');";
+            var script = $"{Constants.JavaScriptEventSimulationCode} {Environment.NewLine} simulate(arguments[0], '{eventName}');";
             driver.ExecuteJavaScript(script, element);
         }
 
