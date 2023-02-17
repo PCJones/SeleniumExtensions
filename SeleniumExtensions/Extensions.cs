@@ -590,7 +590,7 @@ namespace SeleniumExtensions
         /// <returns>Returns true if the text is found, returns false if the timeout is reached.</returns>
         public static async Task<bool> WaitForPageContainsStringAsync(this IWebDriver driver, string text, TimeSpan timeout)
         {
-            var maxIterations = timeout.Seconds * 4;
+            var maxIterations = timeout.TotalSeconds * 4;
             // Waite till the page source contains a given peace of text
             for (int i = 0; i < maxIterations; i++)
             {
@@ -654,7 +654,7 @@ namespace SeleniumExtensions
         /// <returns>Returns true when the element is found, returns false when the timeout is reached.</returns>
         public static async Task<bool> WaitForElementExistsAsync(this IWebDriver driver, By by, TimeSpan timeout, int elementIndex = 0)
         {
-            var maxIterations = timeout.Seconds * 4;
+            var maxIterations = timeout.TotalSeconds * 4;
             for (int i = 0; i < maxIterations; i++)
             {
                 try
@@ -723,7 +723,7 @@ namespace SeleniumExtensions
         /// <returns>Returns true when the element is not hidden, returns false when the timeout is reached or the element does not exist.</returns>
         public static async Task<bool> WaitForElementDisplayedAsync(this IWebDriver driver, IWebElement element, TimeSpan timeout)
         {
-            var maxIterations = timeout.Seconds * 4;
+            var maxIterations = timeout.TotalSeconds * 4;
             for (int i = 0; i < maxIterations; i++)
             {
                 if (element.Displayed)
@@ -842,7 +842,7 @@ namespace SeleniumExtensions
 
             var element = driver.FindElements(by)[elementIndex];
 
-            var maxIterations = Math.Max(1, (timeout.Seconds - stopwatch.Elapsed.Seconds) * 4);
+            var maxIterations = Math.Max(1, (timeout.TotalSeconds - stopwatch.Elapsed.TotalSeconds) * 4);
             for (int i = 0; i < maxIterations; i++)
             {
                 if (element.Displayed)
