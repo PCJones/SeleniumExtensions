@@ -84,9 +84,9 @@ namespace SeleniumExtensions
         /// Executes JavaScript on the current page
         /// </summary>
         /// <param name="script">JavaScript to execute</param>
-        /// <param name="arguments">Provide IWebElements accessible by using arguments[n] in the script</param>
+        /// <param name="arguments">Provide objects accessible by using arguments[n] in the script</param>
         /// <returns></returns>
-        public static object ExecuteJavaScript(this IWebDriver driver, string script, params IWebElement[] arguments)
+        public static object ExecuteJavaScript(this IWebDriver driver, string script, params object[] arguments)
         {
             return driver.ScriptExecutor().ExecuteScript(script, arguments);
         }
